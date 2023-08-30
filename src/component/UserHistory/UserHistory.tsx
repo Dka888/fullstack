@@ -1,4 +1,3 @@
-import React from "react";
 import { useSearchContext } from "../../utils/Context"
 
 import './UserHistory.scss'
@@ -10,7 +9,7 @@ export const UserHistory = () => {
         <div className="history">
             <div className='history__container'>
                 <section className="history__product-list">
-                    {!!history.length ?
+                    {history.length ?
                         <table>
                             <tr>
                                 <th>img</th>

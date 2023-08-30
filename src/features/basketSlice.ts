@@ -17,12 +17,9 @@ const initialState: BasketState = {
 };
 
 export const getBasket = createAsyncThunk('basket/getBasket', async (id: string) => {
-  try {
     const response = await axios.get(`http://localhost:3333/basket/${id}`);
     return response.data;
-  } catch (e) {
-    throw e;
-  }
+
 })
 
 export const addToBasket = createAsyncThunk('basket/addToBasket', async (product: Product) => {
@@ -54,12 +51,9 @@ export const removeFromBasket = createAsyncThunk('basket/removeFromBasket', asyn
   });
 
 export const removeAllFromBasket = createAsyncThunk('basket/removeAllFromBasket', async () => {
-   try {
+
       const response = await axios.patch(`http://localhost:3333/basket/all/${_id}`);
       return response.data;
-   } catch(e) {
-    throw e;
-   }
 });
 
 export const deleteItem = createAsyncThunk('basket/delete', async (_id: string) => {
@@ -98,7 +92,7 @@ const basketSlice = createSlice({
         state.items = action.payload
         state.isLoadingBasket = false;
       })
-      .addCase(getBasket.pending, (state, action) => {
+      .addCase(getBasket.pending, (state ) => {
   
         state.isLoadingBasket = true;
       })
