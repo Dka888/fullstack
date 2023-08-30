@@ -1,0 +1,64 @@
+  @import '../../utils/utils.scss';
+
+  .footer {
+    background-color: var(--main-grey);
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-bottom: 0;
+
+    @media (max-width: 500px) {
+      flex-direction: column;
+    }
+
+    &__item {
+      flex: 1 1 300px;
+      margin: 15px;
+      color:var(--optional-biege);
+
+      &:last-child {
+        margin-left: 3rem;
+      }
+
+      @media (max-width: 600px) {
+        flex: 1 1 auto;
+        text-align: center;
+        margin: auto;
+      }
+
+      & ul {
+        list-style: none;
+        padding: 0;
+        margin-left: 1rem;
+      }
+      
+      & li {
+        margin-bottom: 5px;
+      }
+      
+      & a {
+        text-decoration: none;
+        color: white;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+     
+    }
+
+     
+    & h3 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    & p {
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+ 

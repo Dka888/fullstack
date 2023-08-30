@@ -1,0 +1,84 @@
+.user-account {
+    text-align: center;
+    margin-top: 50px;
+    min-height: 50vh;
+    padding: 0 3rem;
+    font-size: 1.5rem;
+
+    &__page {
+      display: flex;
+      justify-content: space-between;
+
+      @media(max-width: 600px) {
+        flex-direction: column;
+    }
+    }
+  }
+
+  .user {
+    &__data {
+      border: 1px solid #333;
+      margin: 1rem;
+      width: 300px;
+      @media(max-width: 600px) {
+        margin: auto;
+      }
+
+      &-avatar {
+        width: 200px;
+        margin: auto;
+      }
+
+      &-personal {
+        border: 1px solid #333;
+        border-radius: 14px;
+        margin: 0.25rem 1rem;
+        font-weight: 700;
+        padding: 1px 0;
+
+      }
+    }
+
+    &__options {
+      border: 1px solid #ccc;
+      margin: 1rem;
+      border-radius: 10px;
+      padding-left: 0;
+
+      &-option {
+        border: 1px solid #333;
+        border-radius: 1rem;
+        margin: 0.5rem 1rem;
+        padding: 1px 0;
+        list-style-type: none;
+
+        .active {
+          background-color: #333;
+          color: white;
+        }
+        &:hover {
+          cursor: pointer;
+          background-color: #333;
+          color: white;
+        }
+      }
+    }
+
+    &__page {
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+
+      @media(max-width: 600px) {
+        flex-direction: column;
+        margin: 0;
+      }
+
+        @media(max-width: 600px) {
+          margin: 3rem auto;
+        }
+      }
+    }
+
+
+ 

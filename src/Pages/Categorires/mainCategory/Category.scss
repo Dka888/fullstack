@@ -1,0 +1,59 @@
+@import '../../../utils/utils.scss';
+
+.categories__title {
+    margin: 3rem auto 1rem;
+    text-align:center;
+    font-size: 3.5rem;
+}
+
+.categories {
+    width: 90vw;
+    min-height: fit-content;
+    display: flex;
+    margin: 25px auto;
+    flex-wrap: wrap;
+    border: 1px solid var(--main-grey);
+    padding: 1.2rem;
+    gap: 10px;
+    background-color: var(--main-white);
+    justify-content: center;
+    z-index: 1;
+}
+
+.category {
+    height: 13rem;
+    width: 20rem;
+    text-align: center;
+    background-color: var(--optional-biege);
+    color: var(--text);
+    border: transparent;
+    opacity: 0.9;
+    z-index: 2;
+    transition: transform 0.5s ease;
+    position: relative;
+
+    h4 {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        font-size: 25px;
+        color: var(--main-white);
+        text-transform: uppercase;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.category:hover {
+    transform: scale(1.1);
+    opacity: 1;
+    z-index: 3;
+}
+.categories__link {
+    text-decoration: none;
+    color: var(--main-grey);
+}

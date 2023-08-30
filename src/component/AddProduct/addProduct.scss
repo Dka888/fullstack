@@ -1,0 +1,57 @@
+@import '../../utils/utils.scss';
+
+.addProductForm {
+    max-width: 500px;
+    text-align: center;
+    margin: 0 auto;
+    min-height: 50vh;
+  
+    &__form {
+      padding: 20px;
+      border: 1px solid var(--main-grey);
+      border-radius: 4px;
+      background-color: white;
+  
+      &__field {
+        margin-bottom: 10px;
+  
+        &-label {
+          font-weight: bold;
+        }
+  
+        &-input,
+        &-select,
+        &-textarea {
+          width: 90%;
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          font-size: 16px;
+        }
+      }
+    }
+  
+    &__submit {
+      padding: 10px 20px;
+      background-color: var(--main-grey);
+      border: 1px solid var(--main-grey);
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: white;
+        color: var(--main-grey);
+      }
+    }
+  }
+
+
+  .show {
+    opacity: 1;
+  }
+
+  .hidden {
+    opacity: 0;
+  }

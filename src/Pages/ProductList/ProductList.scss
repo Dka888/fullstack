@@ -1,0 +1,19 @@
+.productList {
+    width: 100vw;
+    min-height: 100vh;
+
+    &__container {
+        width: 70vw;
+        margin: 20px auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    &__title {
+        text-align: center;
+        margin: 3rem auto 1rem;
+        font-size: 3.5rem;
+    }
+}

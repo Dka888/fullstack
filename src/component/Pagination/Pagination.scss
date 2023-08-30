@@ -1,0 +1,35 @@
+@import '../../utils/utils.scss';
+
+.pagination {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__page {
+        text-decoration: none;
+        list-style-type: none;
+        padding: 2px 7px;
+        margin: 0.3rem;
+        border: 1px var(--main-grey) solid;
+        color: var(--main-grey);
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.active {
+    background-color: #606060;
+    color: var(--main-white);
+    cursor: not-allowed;
+}
+
+.not-active:hover {
+    cursor: pointer; 
+    background-color: var(--main-grey);
+    color: var(--main-white);
+}

@@ -1,0 +1,103 @@
+@import '../../utils/utils.scss';
+
+.cartItem {
+    margin: auto 5rem;
+
+    &__title {
+        margin: 3rem auto 1rem;
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    &__container {
+        display: flex;
+        margin: 1rem 5rem;
+        padding: 1rem;
+        gap: 3rem;
+        @media(max-width: 600px) {
+            flex-direction: column;
+            padding: 0;
+            margin: 0;
+        }
+
+        &-img {
+            width: 50%;
+            max-height: 50vh;
+
+            @media(max-width: 600px) {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &-title {
+            margin: auto;
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+
+        }
+
+        &-info {
+            width: 50%;
+            padding-top: 4rem;
+
+            @media(max-width: 600px) {
+                width: 100%;
+                padding-top: 1rem;
+            }
+
+            &--text {
+                font-size: 1.2rem;
+                text-align: end;
+                position: relative;
+                margin: 1rem;
+                padding-bottom: 1rem;
+                display: flex;
+                justify-content: space-between;
+                color: var(--main-grey);
+
+                span {
+                    font-weight: 700;
+                    color: var(--main-grey);
+                }
+
+                &::after {
+                    content: '';
+                    height: 1px;
+                    width: 70%;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    background-color: var(--main-grey);
+
+                    @media(max-width: 600px) {
+                        width: 100%;
+                    }
+                }
+            }
+
+            &--info-text {
+                text-align: justify;
+
+                span {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &__desc {
+        width: 70vw;
+        margin: auto;
+        text-align: center;
+        justify-content: center;
+        color: var(--main-grey);
+        font-size: 1.5rem;
+        margin-top: 3rem;
+        
+        h5 {
+            font-size: 2rem;
+        }
+    }
+}

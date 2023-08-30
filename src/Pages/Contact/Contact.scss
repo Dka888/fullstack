@@ -1,0 +1,69 @@
+@import '../../utils/utils.scss';
+
+
+.contact {
+    height: fit-content;
+    width: 30vw;
+    margin: 3rem auto;
+    border: 1px solid var(--main-grey);
+    border-radius: 0.3rem;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+
+    @media(max-width: 600px) {
+        width: 200px;
+        flex-direction: column;
+    }
+
+    &__title {
+        text-align: center;
+        margin: 3rem auto 1rem;
+        font-size: 3.5rem;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: var(--text);
+    }
+
+    &__text--bold {
+        font-weight: 700;
+    }
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    height: 20vh;
+    width: 20vw;
+    text-align: center;
+    padding-bottom: 4rem;
+
+    @media(max-width: 600px) {
+        width: 200px;
+    }
+
+    &__input {
+        width: 100%;
+        margin: 10px auto;
+        border-radius: 0.3rem;
+    
+    }
+    
+    &__textarea {
+        width: 100%;
+        margin: 10px auto;
+        border-radius: 0.3rem;
+        resize: none;
+    }
+    
+    &__button {
+        width: 70%;
+        margin: 10px auto;
+    }
+    
+}
+

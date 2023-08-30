@@ -1,0 +1,135 @@
+@import '../../utils/utils.scss';
+
+.basket {
+    min-height: 100vh;
+
+    &__title {
+        text-align: center;
+        margin: 0 auto 1rem;
+        font-size: 1.5rem;
+    }
+
+    &__container {
+        width: 800px;
+        min-height: 100px;
+        max-height: fit-content;
+        display: flex;
+        margin: 0 auto;
+        padding: 1em;
+        border: solid var(--main-grey) 1px;
+
+        @media(max-width: 600px) {
+            width: 100%;
+            margin: 0;
+            padding: 1px;
+            flex-direction: column;
+        }
+    }
+
+    &__addition {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        font-size: 1.1rem;
+
+        @media(max-width: 600px) {
+            margin: auto;
+        }
+
+        &-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 0 1em;
+            gap: 0.5rem;
+
+            @media(max-width: 600px) {
+                justify-content: space-around;
+            }
+        }
+    }
+
+    &__product-list {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        flex-direction: column;
+
+        @media (min-width: 600px) {
+             flex-direction: row;
+        }
+    }
+
+    &__product {
+        width: 300px;
+        border: 1px solid var(--ligth-gray);
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+
+        @media(max-width: 600px) {
+            grid-template-columns:  1fr;
+            grid-template-rows: auto;
+            border: transparent;
+            padding-bottom: 0;
+        }
+
+        img {
+            width: 7rem;
+            height: auto;
+            border: 2px solid var(--optional-rose);
+            margin: auto;
+        }
+
+        h2 {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+        }
+
+        p {
+            margin-top: 0.5rem;
+            font-size: 1rem;
+        }
+
+        &-buttons {
+            display: flex;
+            height: 2.5em;
+            width: 2.5em;
+            flex-direction: column;
+            gap: 1em;
+            justify-content: center;
+            margin: auto;
+            margin-right: 1em;
+        }
+
+
+    }
+
+    &__cart {
+        padding: 1rem;
+
+        h2 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+
+    }
+
+    &__total {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-top: 1rem;
+    }
+
+    &__cart-items {
+        list-style: none;
+        padding: 0;
+
+        li {
+            margin-bottom: 1em;
+        }
+    }
+}

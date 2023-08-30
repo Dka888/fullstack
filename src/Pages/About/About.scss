@@ -1,0 +1,28 @@
+.about {
+    min-height: 100vh;
+    width: 85vw;
+    padding: 0 7rem;
+
+    &__title {
+        text-align: center;
+        margin: 3rem auto 1rem;
+        font-size: 3.5rem;
+    }
+    
+    &__text {
+        text-align: center;
+        margin: auto auto 5rem;
+
+        p {
+            justify-content: center;
+            text-align: justify;
+            margin: 1rem auto;
+        }
+    }
+
+    &__picture {
+        height: auto;
+        padding: 0 1rem;
+    }
+}
+

@@ -1,0 +1,44 @@
+@import '../../utils/utils.scss';
+
+.changes {
+    min-width: 300px;
+    margin: 3rem auto auto;
+    background-color: var(--main-grey);
+    border-radius: 14px;
+    min-height: 300px;
+    padding: 1rem;
+    color: white;
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        label {
+            margin: 0.7rem auto;
+        }
+
+        &-input {
+            margin: 10px;
+            border: 1px solid #e1e7ed;
+            border-radius: 4px;
+            font-weight: 300;
+            box-shadow: 0 1px 8px rgba(51, 61, 81, 0.1);
+            outline: none;
+            padding: 0.2rem 1rem;
+
+            &::placeholder {
+                font-size: smaller;
+                font-weight: 200;
+                opacity: 0.8;
+            }
+        }
+        &-button {
+            margin: 1rem auto;
+            width: 80%;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
