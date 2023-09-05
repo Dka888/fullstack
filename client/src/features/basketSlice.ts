@@ -4,6 +4,8 @@ import { Basket } from '../utils/Basket';
 import axios from 'axios';
 import { ProductsInBasket } from '../utils/Basket';
 
+const urlBasket = 'http://fullstack-azure.vercel.app/basket' || 'http://localhost:3333/basket';
+
 interface BasketState {
   items: Basket[];
   isLoadingBasket: boolean;
@@ -17,7 +19,7 @@ const initialState: BasketState = {
 };
 
 export const getBasket = createAsyncThunk('basket/getBasket', async (id: string) => {
-    const response = await axios.get(`http://localhost:3333/basket/${id}`);
+    const response = await axios.get(`${urlBasket}/${id}`);
     return response.data;
 
 })
@@ -26,7 +28,7 @@ export const addToBasket = createAsyncThunk('basket/addToBasket', async (product
   try {
     if (activeUser) {
       const newBasket = { userId: _id, productId: product._id };
-      const response = await axios.post('http://localhost:3333/basket/add', newBasket);
+      const response = await axios.post(`${urlBasket}/add`, newBasket);
       const newData = response.data;
       return newData;
     }
@@ -40,7 +42,7 @@ export const removeFromBasket = createAsyncThunk('basket/removeFromBasket', asyn
   try {
     if (activeUser) {
       const updatingBasket = { userId: _id, productId };
-      const response = await axios.patch(`http://localhost:3333/basket/${_id}`, updatingBasket);
+      const response = await axios.patch(`${urlBasket}/${_id}`, updatingBasket);
       const updatedBasket = response.data;
       return updatedBasket
     }
@@ -52,13 +54,13 @@ export const removeFromBasket = createAsyncThunk('basket/removeFromBasket', asyn
 
 export const removeAllFromBasket = createAsyncThunk('basket/removeAllFromBasket', async () => {
 
-      const response = await axios.patch(`http://localhost:3333/basket/all/${_id}`);
+      const response = await axios.patch(`${urlBasket}/all/${_id}`);
       return response.data;
 });
 
 export const deleteItem = createAsyncThunk('basket/delete', async (_id: string) => {
   try {
-    const response = await axios.delete(`http://localhost:3333/basket/${_id}`);
+    const response = await axios.delete(`${urlBasket}/${_id}`);
     return response.data;
   } catch (e) {
     console.log(e);
@@ -72,7 +74,7 @@ export const changeQuantities = createAsyncThunk('basket/changeQuantity', async 
       const {quantity} = product;
       const updatingBasket = { userId: _id, quantity, _id: product._id };
      
-      const response = await axios.patch(`http://localhost:3333/basket/quantity/${_id}`, updatingBasket);
+      const response = await axios.patch(`${urlBasket}/quantity/${_id}`, updatingBasket);
       const updatedBasket = response.data;
      console.log(response)
       return updatedBasket

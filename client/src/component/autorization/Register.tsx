@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Register.scss';
 import axios from 'axios';
+import { urlUser } from '../../features/usersSlice';
 
 export const Register = () => {
     const [username, setUsername] = useState('');
@@ -12,7 +13,7 @@ export const Register = () => {
         e.preventDefault();
         const newUser = { username, password, email };
         try {
-            const response = await axios.post('http://localhost:3333/users/register', newUser)
+            const response = await axios.post(`${urlUser}/register`, newUser)
         if (response.status === 201) {
             setMessage(response.data.message);
             setTimeout(() => setMessage(null), 3000);

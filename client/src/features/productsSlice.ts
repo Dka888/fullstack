@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { Product } from '../utils/Product';
 import axios from 'axios';
 
+const urlProducts = 'http://fullstack-azure.vercel.app/products' || 'http://localhost:3333/products';
 
 interface ProductState {
     products: Product[];
@@ -14,7 +15,7 @@ const initialState: ProductState = {
 };
 
 export const getProducts = createAsyncThunk('products/getProducts', async () => {
-    const data = axios.get('http://localhost:3333/products');
+    const data = axios.get(urlProducts);
     const prods = (await data).data as Product[];
     return prods || [];
 });
@@ -22,7 +23,7 @@ export const getProducts = createAsyncThunk('products/getProducts', async () => 
 export const editProduct = createAsyncThunk('products/editProduct', async (productItem: Product) => {
     const {_id, rating, click} = productItem;
     try {
-       const response = await axios.patch(`http://localhost:3333/products/${_id}`, {rating, click});
+       const response = await axios.patch(`${urlProducts}/${_id}`, {rating, click});
        const productUpdated = await response.data;
        return productUpdated;
     } catch(e) {
@@ -32,7 +33,7 @@ export const editProduct = createAsyncThunk('products/editProduct', async (produ
 
 export const addProduct = createAsyncThunk('product/addroduct', async(newProduct: Product) => {
     try {
-        const response = await axios.post('http://localhost:3333/products/add', newProduct); 
+        const response = await axios.post(`${urlProducts}/add`, newProduct); 
         const newData = response.data;
         return newData;
     } catch(e) {

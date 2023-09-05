@@ -3,6 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { User } from '../utils/User';
 
+export const urlUser = 'http://fullstack-azure.vercel.app/users' || 'http://localhost:3333/users';
 
 interface UsersState {
     user: User | null;
@@ -22,7 +23,7 @@ const initialState: UsersState = {
 // });
 
 export const createUser = createAsyncThunk('users/createUser', async (user: User) => {
-    const response = await axios.post('http://localhost:3333/users/register', {...user});
+    const response = await axios.post(`${urlUser}/register`, {...user});
     return response.data;
 })
 

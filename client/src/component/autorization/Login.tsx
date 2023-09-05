@@ -3,6 +3,7 @@ import './Login.scss';
 import axios from 'axios';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { login } from '../../features/loginSlice';
+import { urlUser } from '../../features/usersSlice';
 
 
 export const Login = () => {
@@ -16,7 +17,7 @@ export const Login = () => {
   const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3333/users/login', {
+      const response = await axios.post(`${urlUser}/login`, {
         username,
         password
       });
