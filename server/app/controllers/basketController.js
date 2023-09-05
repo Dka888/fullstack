@@ -14,8 +14,12 @@ export const addToBasket = async(req, res) => {
 
         let basketItem = await BasketItem.findOne({ userId, productId });
         if (basketItem) {
-          basketItem.quantity += 1;
-          await basketItem.save();
+
+          if(basketItem.status === 'in_cart') {
+            basketItem.quantity += 1;
+            await basketItem.save();
+          }
+         
         } else {
           basketItem = new BasketItem({ userId, productId });
           await basketItem.save();
