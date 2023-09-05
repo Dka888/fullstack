@@ -30,7 +30,7 @@ export const Login = () => {
         dispatch(login());
         const loggedUser = response.data.user;
         localStorage.setItem('loggedInUser', JSON.stringify(loggedUser));
-        setTimeout(() =>{window.location.href = '/user'}, 3000);
+        setTimeout(() =>{window.location.href = '/'}, 3000);
       } else {
         setShowMessage(true);
         setTimeout(() => setShowMessage(false), 3000);
