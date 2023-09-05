@@ -196,7 +196,6 @@ export const SearchContextProvider = (
         } 
         dispatch(addToBasket(product));
         
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [dispatch, listOfProduct]);
 
     return (
