@@ -3,6 +3,7 @@ import { Category } from '../../utils/Categoris';
 import './addProduct.scss';
 import axios from 'axios';
 import { Product } from '../../utils/Product';
+import { urlProducts } from '../../features/productsSlice';
 
 type FormData = Omit<Product, '_id'>;
 
@@ -33,7 +34,7 @@ export const AddProduct = () => {
         event.preventDefault();
         setWait(true);
         try {
-            const response = await axios.post('http://localhost:3333/products/add', formData); 
+            const response = await axios.post(`${urlProducts}/add`, formData); 
         
             if (response.status === 201) {
                 setMessage(true);

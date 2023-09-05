@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { Product } from '../utils/Product';
 import axios from 'axios';
 
-const urlProducts = 'https://fullstack-azure.vercel.app/products' || 'http://localhost:3333/products';
+export const urlProducts = 'https://fullstack-azure.vercel.app/products' || 'http://localhost:3333/products';
 
 interface ProductState {
     products: Product[];
