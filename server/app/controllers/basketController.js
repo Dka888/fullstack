@@ -13,7 +13,7 @@ export const addToBasket = async(req, res) => {
         }
 
         let basketItem = await BasketItem.findOne({ userId, productId });
-        if (basketItem && basketItem.status !== "purchased") {
+        if (basketItem) {
           basketItem.quantity += 1;
           await basketItem.save();
         } else {
