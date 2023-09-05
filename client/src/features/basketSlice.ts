@@ -4,7 +4,7 @@ import { Basket } from '../utils/Basket';
 import axios from 'axios';
 import { ProductsInBasket } from '../utils/Basket';
 
-const urlBasket = 'http://fullstack-azure.vercel.app/basket' || 'http://localhost:3333/basket';
+const urlBasket = 'https://fullstack-azure.vercel.app/basket' || 'http://localhost:3333/basket';
 
 interface BasketState {
   items: Basket[];
