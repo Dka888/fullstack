@@ -16,6 +16,9 @@ app.use(bodyParser.json());
 app.use('/users', userRoute);
 app.use('/products', productRoute);
 app.use('/basket', basketRoute);
+app.use('/', (req, res) => {
+  res.send('hello');
+})
 
 
 mongoose.connect(db)
