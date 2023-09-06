@@ -20,7 +20,7 @@ Profile Management: Logged-in users can manage their profiles, update user data,
 Adding Products to the Store: Add products to the shop by user account.
 Give rating to the products: All Products Card have stars, user can clikc on the right star.
 
-[DEMO](https://store-online-13g1.vercel.app/)
+[DEMO](https://fullstack-6n85.vercel.app/)
 
 How to install the project on local git: 
 1) Clone the repository and paste the the bash:
