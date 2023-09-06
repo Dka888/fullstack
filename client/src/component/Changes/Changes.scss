@@ -1,13 +1,18 @@
 @import '../../utils/utils.scss';
 
 .changes {
-    min-width: 300px;
+    
     margin: 3rem auto auto;
     background-color: var(--main-grey);
     border-radius: 14px;
     min-height: 300px;
-    padding: 1rem;
     color: white;
+    
+    @media(min-width: 600px) {
+        padding: 1rem;
+        min-width: 300px;
+    }
+
 
     &__form {
         display: flex;

@@ -1,7 +1,12 @@
 .about {
     min-height: 100vh;
     width: 85vw;
-    padding: 0 7rem;
+    padding-left: 1rem;
+
+    @media(min-width: 600px) {
+       padding: 0 7rem; 
+    }
+    
 
     &__title {
         text-align: center;
