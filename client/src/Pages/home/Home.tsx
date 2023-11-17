@@ -15,8 +15,7 @@ export const Home = () => {
     const [productsForCarousel, setCarousel] = useState<Product[]>([]);
     const dispatch = useAppDispatch();
     const products = useAppSelector(state => state.products.products);
-    
-
+   
     useEffect(() => {
         const loadingProducts = async () => {
             await dispatch(getProducts());

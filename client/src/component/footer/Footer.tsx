@@ -16,7 +16,7 @@ export const Footer = () => {
               eligendi consectetur deserunt velit doloribus recusandae,
               labore reiciendis eaque distinctio autem obcaecati quod ipsum cum.</p>
       </div>
-      <div className="footer__item">
+      <div className="footer__item footer__item-policy">
             <h3>Policy:</h3>
         <ul>
               <li><a href="/" >Sending</a></li>

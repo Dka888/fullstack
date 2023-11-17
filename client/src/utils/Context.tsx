@@ -104,7 +104,6 @@ export const SearchContextProvider = (
         const newQuantity = quantity - 1;
         const newProduct = { ...product, quantity: newQuantity }
         if (newQuantity === 0) {
-            console.log(product);
             dispatch(deleteItem(product._id));
             const replace = listOfProduct.filter(item => item._id !== newProduct._id);
             setListOfProduct(replace);
